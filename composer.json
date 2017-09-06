@@ -1,0 +1,13 @@
+{
+  "name": "fortifi/provisioning",
+  "description": "Fortifi Product Provisioning",
+  "homepage": "http://fortifi.io/",
+  "require": {
+    "packaged/helpers": "~1.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fortifi\\Provisioning\\": "src/"
+    }
+  }
+}

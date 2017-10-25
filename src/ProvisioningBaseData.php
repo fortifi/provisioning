@@ -9,4 +9,9 @@ abstract class ProvisioningBaseData
   public $timestamp;
   public $customerFid;
   public $subscriptionFid;
+
+  /**
+   * @var TransportProperty[]
+   */
+  public $properties = [];
 }

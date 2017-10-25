@@ -1,6 +1,8 @@
 <?php
 namespace Fortifi\Provisioning;
 
+use Packaged\Helpers\ValueAs;
+
 class ProvisioningRequest extends ProvisioningBaseData
 {
   /**
@@ -33,4 +35,12 @@ class ProvisioningRequest extends ProvisioningBaseData
    * Leave blank for lifetime/onetime services
    */
   public $cycle;
+
+  public function hydrate($from)
+  {
+    parent::hydrate($from);
+    $this->configuration = ValueAs::arr($this->configuration);
+    return $this;
+  }
+
 }

@@ -3,7 +3,10 @@
   "description": "Fortifi Product Provisioning",
   "homepage": "http://fortifi.io/",
   "require": {
-    "packaged/helpers": "~1.9"
+    "packaged/helpers": "~1.10"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "6.4.*"
   },
   "autoload": {
     "psr-4": {

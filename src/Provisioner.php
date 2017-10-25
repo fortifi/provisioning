@@ -1,8 +1,6 @@
 <?php
 namespace Fortifi\Provisioning;
 
-use Packaged\Helpers\Objects;
-
 class Provisioner
 {
   /**
@@ -10,21 +8,34 @@ class Provisioner
    *
    * @return ProvisioningRequest
    */
-  public static function fromRequest($json)
+  public static function fromJsonRequest($json)
   {
     $decoded = json_decode($json);
     $request = new ProvisioningRequest();
-    Objects::hydrate($request, $decoded);
+    $request->hydrate($decoded);
     return $request;
   }
 
   /**
-   * @param ProvisioningResponse $response
+   * @param $json
+   *
+   * @return ProvisioningResponse
+   */
+  public static function fromJsonResponse($json)
+  {
+    $decoded = json_decode($json);
+    $response = new ProvisioningResponse();
+    $response->hydrate($decoded);
+    return $response;
+  }
+
+  /**
+   * @param ProvisioningBaseData $data
    *
    * @return string
    */
-  public static function toResponse(ProvisioningResponse $response)
+  public static function toJson(ProvisioningBaseData $data)
   {
-    return json_encode($response);
+    return json_encode($data);
   }
 }

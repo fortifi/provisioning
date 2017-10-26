@@ -18,13 +18,18 @@ abstract class ProvisioningEnum implements \JsonSerializable
     }
   }
 
+  public function value()
+  {
+    return $this->_value;
+  }
+
   public function jsonSerialize()
   {
-    return $this->__toString();
+    return $this->value();
   }
 
   public function __toString()
   {
-    return $this->_value;
+    return $this->value();
   }
 }

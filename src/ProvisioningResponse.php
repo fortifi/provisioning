@@ -4,7 +4,7 @@ namespace Fortifi\Provisioning;
 class ProvisioningResponse extends ProvisioningBaseData
 {
   /**
-   * @var ResponseType
+   * @var string|ResponseType
    */
   public $type;
   /**

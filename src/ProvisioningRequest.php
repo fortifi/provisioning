@@ -6,7 +6,7 @@ use Packaged\Helpers\ValueAs;
 class ProvisioningRequest extends ProvisioningBaseData
 {
   /**
-   * @var RequestType
+   * @var string|RequestType
    */
   public $type;
   public $orderFid;

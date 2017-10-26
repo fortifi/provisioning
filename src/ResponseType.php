@@ -15,4 +15,9 @@ class ResponseType
    * Request Failed
    */
   const FAILED = 'failed';
+
+  public function __toString()
+  {
+    return 'unknown';
+  }
 }

@@ -9,4 +9,9 @@ class RequestType
   const REACTIVATE = 'reactivate';
   const CANCEL = 'cancel';
   const END = 'end';
+
+  public function __toString()
+  {
+    return 'unknown';
+  }
 }

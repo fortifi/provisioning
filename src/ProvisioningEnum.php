@@ -1,7 +1,7 @@
 <?php
 namespace Fortifi\Provisioning;
 
-abstract class ProvisioningEnum
+abstract class ProvisioningEnum implements \JsonSerializable
 {
   protected $_value = 'unknown';
 
@@ -16,6 +16,11 @@ abstract class ProvisioningEnum
     {
       $this->_value = $value;
     }
+  }
+
+  public function jsonSerialize()
+  {
+    return $this->__toString();
   }
 
   public function __toString()

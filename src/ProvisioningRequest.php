@@ -40,6 +40,7 @@ class ProvisioningRequest extends ProvisioningBaseData
   {
     parent::hydrate($from);
     $this->configuration = ValueAs::arr($this->configuration);
+    $this->type = new RequestType($this->type);
     return $this;
   }
 

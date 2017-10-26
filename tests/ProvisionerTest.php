@@ -13,7 +13,7 @@ class ProvisionerTest extends TestCase
   public function testTransport()
   {
     $request = new ProvisioningRequest();
-    $request->type = RequestType::ACTIVATE;
+    $request->type = new RequestType(RequestType::ACTIVATE);
     $request->orderFid = 'FID:ORD:1505751823:OGmYqUzfJVtKr';
     $request->productFid = 'FID:PROD:1505752039:z5DvVoA3HuAF';
     $request->priceFid = 'FID:PROD:PRCE:1505752100:ZJneYwx';

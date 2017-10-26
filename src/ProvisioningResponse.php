@@ -18,4 +18,11 @@ class ProvisioningResponse extends ProvisioningBaseData
    * @var LogMessage[]
    */
   public $log;
+
+  public function hydrate($from)
+  {
+    parent::hydrate($from);
+    $this->type = new ResponseType($this->type);
+    return $this;
+  }
 }

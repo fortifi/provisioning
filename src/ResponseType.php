@@ -1,7 +1,7 @@
 <?php
 namespace Fortifi\Provisioning;
 
-class ResponseType
+class ResponseType extends ProvisioningEnum
 {
   /**
    * Request Handled
@@ -16,8 +16,12 @@ class ResponseType
    */
   const FAILED = 'failed';
 
-  public function __toString()
+  public function getValues()
   {
-    return 'unknown';
+    return [
+      self::SUCCESS    => self::SUCCESS,
+      self::PROCESSING => self::PROCESSING,
+      self::FAILED     => self::FAILED,
+    ];
   }
 }

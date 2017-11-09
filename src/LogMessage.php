@@ -7,6 +7,7 @@ class LogMessage
   const INFO = 'info';
   const WARNING = 'warning';
   const ERROR = 'error';
+  const SUCCESS = 'success';
 
   const SOURCE_STATUS = 'status';
   const SOURCE_PROCESS = 'process';

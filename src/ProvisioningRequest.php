@@ -36,6 +36,11 @@ class ProvisioningRequest extends ProvisioningBaseData
    */
   public $cycle;
 
+  /**
+   * @var string URL to post updates for this request to
+   */
+  public $updateUrl;
+
   public function hydrate($from)
   {
     parent::hydrate($from);

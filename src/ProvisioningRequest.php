@@ -41,12 +41,27 @@ class ProvisioningRequest extends ProvisioningBaseData
    */
   public $updateUrl;
 
+  /**
+   * @var string Hash to verify your request
+   */
+  public $verifyHash;
+
   public function hydrate($from)
   {
     parent::hydrate($from);
     $this->configuration = ValueAs::arr($this->configuration);
     $this->type = new RequestType($this->type);
     return $this;
+  }
+
+  /**
+   * @param $provisioningKey - Configured
+   *
+   * @return bool
+   */
+  public function isVerified($provisioningKey)
+  {
+    return $this->verifyHash == md5($this->transportKey . $provisioningKey);
   }
 
 }
